@@ -8,8 +8,8 @@ export class Newsitem extends Component {
         <div className="card" style={{ width: " 18rem" }}>
           <img src={imageUrl} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{description}</p>
+            <h5 className="card-title">{title.slice(0,15)}</h5>
+            <p className="card-text">{description.slice(0,50)}</p>
           </div>
           <ul className="list-group list-group-flush">
             <li className="list-group-item">By-{author}</li>

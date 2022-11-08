@@ -2,210 +2,280 @@ import React, { Component } from "react";
 import Newsitem from "./newsitem";
 export class Newscomponent extends Component {
   articles = [
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Kyle Wiggers",
-//       title:
-//         "Twitter begins rolling out $7.99 Twitter Blue plan with verification, fewer ads",
-//       description:
-//         "Twitter has begun rolling out a pricier Twitter Blue plan, starting at $7.99 per month, that includes verification and ostensibly fewer ads.",
-//       url: "https://techcrunch.com/2022/11/05/twitter-begins-rolling-out-7-99-twitter-blue-plan-with-verification-fewer-ads/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/11/elon-musk-twitter-dollar-signs.jpg?resize=1200,645",
-//       publishedAt: "2022-11-05T19:06:54Z",
-//       content:
-//         "Just days after newly minted Twitter CEO Elon Musk floated changes to Twitter’s system for verifying user accounts, including charging $8 per month for the privilege, Twitter appears to have begun ro… [+2523 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Natasha Mascarenhas",
-//       title: "Tweeps Twitter",
-//       description:
-//         "Welcome to Startups Weekly, a nuanced take on this week’s startup news and trends by Senior Reporter and Equity co-host Natasha Mascarenhas. To get this in your inbox, subscribe here. We’ve been living through a lot of tech history over the past two years, bu…",
-//       url: "https://techcrunch.com/2022/11/05/tweeps-twitter/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/10/twitter-bird-in-cage-3.jpg?resize=1200,645",
-//       publishedAt: "2022-11-05T18:01:43Z",
-//       content:
-//         "Welcome to Startups Weekly, a nuanced take on this weeks startup news and trends by Senior Reporter and Equity co-host Natasha Mascarenhas. To get this in your inbox, subscribe here.\r\nWeve been livin… [+8367 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Natasha Mascarenhas",
-//       title:
-//         "Jack Dorsey breaks his silence, owns “responsibility for why everyone is in this situation” at Twitter",
-//       description:
-//         "Jack Dorsey breaks his silence to address Twitter's layoffs, which impacted approximately 50% of the social media company's staff.",
-//       url: "https://techcrunch.com/2022/11/05/jack-dorsey-speaks-twitter-layoffs/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/10/birds-talking-4.jpg?resize=1200,645",
-//       publishedAt: "2022-11-05T15:56:29Z",
-//       content:
-//         "Jack Dorsey, who stepped down as Twitter CEO less than one year ago, finally addressed the layoffs that impacted approximately 50% of the company he co-founded in 2006. The workforce reduction, led b… [+2300 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Lucas Matney",
-//       title:
-//         "Bitwise’s Katherine Dowling talks rules and regs at TC Sessions: Crypto",
-//       description:
-//         "Crypto's on the road to stateside regulation, but how much is enough without stifling the sector’s growth and future innovation?",
-//       url: "https://techcrunch.com/2022/11/05/bitwises-katherine-dowling-talks-rules-and-regs-at-tc-sessions-crypto/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/08/TC22_Sessions_Crypto_1200x628-dowling-shtylman-Slaughter-1.jpg",
-//       publishedAt: "2022-11-05T14:20:02Z",
-//       content:
-//         "Crypto entities ranging from major exchanges to small projects are on the road to stateside regulation. Whether it comes through the Securities and Exchange Commission or the Commodity Futures Tradin… [+4779 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Matt Burns",
-//       title: "Making DAOs accessible for normals on TechCrunch Live",
-//       description:
-//         "Want to start a DAO? It’s not that hard. Want to join a DAO? It’s even easier, but there are several steps to get connected. Some of those steps are daunting. That’s why Alex Taub started Upstream, which attempts to make starting and onboarding for a DAO much…",
-//       url: "https://techcrunch.com/2022/11/05/making-daos-accessible-for-normals-on-techcrunch-live/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/11/TCL-2022-11-09-Facebook-1200x630-1.jpg",
-//       publishedAt: "2022-11-05T14:18:52Z",
-//       content:
-//         "This TechCrunch Live event opens on November 9 at 11:30 a.m. PDT/2:30 p.m. EDT with networking. The interview begins at 12:00 p.m. PDT followed by the TCL Pitch Practice at 12:30 p.m. PDT.\r\nApply for… [+447 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Greg Kumparak",
-//       title:
-//         "Elon guts Twitter, Google shutters Hangouts, and the tech layoffs continue",
-//       description:
-//         "Hey, all — welcome back to Week in Review, the newsletter where we sum up the most read TechCrunch stories from the past week. And oof, what a week it was.",
-//       url: "https://techcrunch.com/2022/11/05/elon-guts-twitter-google-shutters-hangouts-and-the-tech-layoffs-continue/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/10/twitter-bird-with-elon-musk-head.jpg?resize=1200,645",
-//       publishedAt: "2022-11-04T23:46:02Z",
-//       content:
-//         "Hey, all welcome back to Week in Review, the newsletter where we sum up the most read TechCrunch stories from the past week. And oof, what a week it was.\r\nWant this newsletter in your inbox every Sat… [+3103 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Darrell Etherington",
-//       title: "Starlink adds a 1TB monthly soft cap for residential users",
-//       description:
-//         "Starlink is de-prioritizing users who exceed 1TB of data use in a month once they hit that cap, the first change to its unlimited access.",
-//       url: "https://techcrunch.com/2022/11/04/starlink-adds-a-1tb-monthly-soft-cap-for-residential-users/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/05/BC43D76C-E7F1-4CF7-99A4-94DB730B0F60-e1653400675961.jpeg?resize=1200,785",
-//       publishedAt: "2022-11-04T23:34:49Z",
-//       content:
-//         "SpaceX’s Starlink internet has included unlimited bandwidth since launch, and while the service will technically continue to provide that to customers, users who exceed 1TB of data use in a single mo… [+1257 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Sarah Perez",
-//       title:
-//         "This Week in Apps: Twitter chaos, Mastodon grows and WhatsApp launches Communities",
-//       description:
-//         "This Week in Apps offers a way to keep up with the latest from the world of apps, including news, updates, startup fundings, M&As and much more.",
-//       url: "https://techcrunch.com/2022/11/05/this-week-in-apps-twitter-chaos-mastodon-grows-and-whatsapp-launches-communities/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/07/this-week-in-apps-splash-2022.webp?resize=1200,637",
-//       publishedAt: "2022-11-04T22:02:35Z",
-//       content:
-//         "Welcome back to This Week in Apps, the weekly TechCrunch series that recaps the latest in mobile OS news, mobile applications and the overall app economy.\r\nGlobal app spending reached $65 billion in … [+20727 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Tim De Chant",
-//       title: "Laid off? Climate tech is looking for talent and founders",
-//       description:
-//         "Even before the recent waves of layoffs, people were leaving their old jobs for new opportunities in climate tech.",
-//       url: "https://techcrunch.com/2022/11/05/laid-off-climate-tech-is-looking-for-talent-and-founders/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2022/11/GettyImages-1269413048.jpg?resize=1200,800",
-//       publishedAt: "2022-11-04T19:48:50Z",
-//       content:
-//         "As rumors rumbled that the U.S. Federal Reserve would hike rates once more and when it followed through earlier this week another round of layoffs hit the tech sector. Stripe, Opendoor, Chime, Zillow… [+2902 chars]",
-//     },
-//     {
-//       source: {
-//         id: "techcrunch",
-//         name: "TechCrunch",
-//       },
-//       author: "Anna Heim",
-//       title: "Connecting the dots: SaaS and alts",
-//       description:
-//         "New data points seem to confirm trends we have heard or seen in two sectors: SaaS and alts.",
-//       url: "https://techcrunch.com/2022/11/05/connecting-the-dots-saas-and-alts/",
-//       urlToImage:
-//         "https://techcrunch.com/wp-content/uploads/2020/06/NSussman_Techcrunch_Exchange-multicolor.jpg?resize=1200,900",
-//       publishedAt: "2022-11-03T20:58:26Z",
-//       content:
-//         "Welcome to The TechCrunch Exchange, a weekly startups-and-markets newsletter. Its inspired by the daily TechCrunch+ column where it gets its name. Want it in your inbox every Saturday? Sign up here.\r… [+1796 chars]",
-//     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Kyle Wiggers",
+    //       title:
+    //         "Twitter begins rolling out $7.99 Twitter Blue plan with verification, fewer ads",
+    //       description:
+    //         "Twitter has begun rolling out a pricier Twitter Blue plan, starting at $7.99 per month, that includes verification and ostensibly fewer ads.",
+    //       url: "https://techcrunch.com/2022/11/05/twitter-begins-rolling-out-7-99-twitter-blue-plan-with-verification-fewer-ads/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/11/elon-musk-twitter-dollar-signs.jpg?resize=1200,645",
+    //       publishedAt: "2022-11-05T19:06:54Z",
+    //       content:
+    //         "Just days after newly minted Twitter CEO Elon Musk floated changes to Twitter’s system for verifying user accounts, including charging $8 per month for the privilege, Twitter appears to have begun ro… [+2523 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Natasha Mascarenhas",
+    //       title: "Tweeps Twitter",
+    //       description:
+    //         "Welcome to Startups Weekly, a nuanced take on this week’s startup news and trends by Senior Reporter and Equity co-host Natasha Mascarenhas. To get this in your inbox, subscribe here. We’ve been living through a lot of tech history over the past two years, bu…",
+    //       url: "https://techcrunch.com/2022/11/05/tweeps-twitter/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/10/twitter-bird-in-cage-3.jpg?resize=1200,645",
+    //       publishedAt: "2022-11-05T18:01:43Z",
+    //       content:
+    //         "Welcome to Startups Weekly, a nuanced take on this weeks startup news and trends by Senior Reporter and Equity co-host Natasha Mascarenhas. To get this in your inbox, subscribe here.\r\nWeve been livin… [+8367 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Natasha Mascarenhas",
+    //       title:
+    //         "Jack Dorsey breaks his silence, owns “responsibility for why everyone is in this situation” at Twitter",
+    //       description:
+    //         "Jack Dorsey breaks his silence to address Twitter's layoffs, which impacted approximately 50% of the social media company's staff.",
+    //       url: "https://techcrunch.com/2022/11/05/jack-dorsey-speaks-twitter-layoffs/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/10/birds-talking-4.jpg?resize=1200,645",
+    //       publishedAt: "2022-11-05T15:56:29Z",
+    //       content:
+    //         "Jack Dorsey, who stepped down as Twitter CEO less than one year ago, finally addressed the layoffs that impacted approximately 50% of the company he co-founded in 2006. The workforce reduction, led b… [+2300 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Lucas Matney",
+    //       title:
+    //         "Bitwise’s Katherine Dowling talks rules and regs at TC Sessions: Crypto",
+    //       description:
+    //         "Crypto's on the road to stateside regulation, but how much is enough without stifling the sector’s growth and future innovation?",
+    //       url: "https://techcrunch.com/2022/11/05/bitwises-katherine-dowling-talks-rules-and-regs-at-tc-sessions-crypto/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/08/TC22_Sessions_Crypto_1200x628-dowling-shtylman-Slaughter-1.jpg",
+    //       publishedAt: "2022-11-05T14:20:02Z",
+    //       content:
+    //         "Crypto entities ranging from major exchanges to small projects are on the road to stateside regulation. Whether it comes through the Securities and Exchange Commission or the Commodity Futures Tradin… [+4779 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Matt Burns",
+    //       title: "Making DAOs accessible for normals on TechCrunch Live",
+    //       description:
+    //         "Want to start a DAO? It’s not that hard. Want to join a DAO? It’s even easier, but there are several steps to get connected. Some of those steps are daunting. That’s why Alex Taub started Upstream, which attempts to make starting and onboarding for a DAO much…",
+    //       url: "https://techcrunch.com/2022/11/05/making-daos-accessible-for-normals-on-techcrunch-live/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/11/TCL-2022-11-09-Facebook-1200x630-1.jpg",
+    //       publishedAt: "2022-11-05T14:18:52Z",
+    //       content:
+    //         "This TechCrunch Live event opens on November 9 at 11:30 a.m. PDT/2:30 p.m. EDT with networking. The interview begins at 12:00 p.m. PDT followed by the TCL Pitch Practice at 12:30 p.m. PDT.\r\nApply for… [+447 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Greg Kumparak",
+    //       title:
+    //         "Elon guts Twitter, Google shutters Hangouts, and the tech layoffs continue",
+    //       description:
+    //         "Hey, all — welcome back to Week in Review, the newsletter where we sum up the most read TechCrunch stories from the past week. And oof, what a week it was.",
+    //       url: "https://techcrunch.com/2022/11/05/elon-guts-twitter-google-shutters-hangouts-and-the-tech-layoffs-continue/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/10/twitter-bird-with-elon-musk-head.jpg?resize=1200,645",
+    //       publishedAt: "2022-11-04T23:46:02Z",
+    //       content:
+    //         "Hey, all welcome back to Week in Review, the newsletter where we sum up the most read TechCrunch stories from the past week. And oof, what a week it was.\r\nWant this newsletter in your inbox every Sat… [+3103 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Darrell Etherington",
+    //       title: "Starlink adds a 1TB monthly soft cap for residential users",
+    //       description:
+    //         "Starlink is de-prioritizing users who exceed 1TB of data use in a month once they hit that cap, the first change to its unlimited access.",
+    //       url: "https://techcrunch.com/2022/11/04/starlink-adds-a-1tb-monthly-soft-cap-for-residential-users/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/05/BC43D76C-E7F1-4CF7-99A4-94DB730B0F60-e1653400675961.jpeg?resize=1200,785",
+    //       publishedAt: "2022-11-04T23:34:49Z",
+    //       content:
+    //         "SpaceX’s Starlink internet has included unlimited bandwidth since launch, and while the service will technically continue to provide that to customers, users who exceed 1TB of data use in a single mo… [+1257 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Sarah Perez",
+    //       title:
+    //         "This Week in Apps: Twitter chaos, Mastodon grows and WhatsApp launches Communities",
+    //       description:
+    //         "This Week in Apps offers a way to keep up with the latest from the world of apps, including news, updates, startup fundings, M&As and much more.",
+    //       url: "https://techcrunch.com/2022/11/05/this-week-in-apps-twitter-chaos-mastodon-grows-and-whatsapp-launches-communities/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/07/this-week-in-apps-splash-2022.webp?resize=1200,637",
+    //       publishedAt: "2022-11-04T22:02:35Z",
+    //       content:
+    //         "Welcome back to This Week in Apps, the weekly TechCrunch series that recaps the latest in mobile OS news, mobile applications and the overall app economy.\r\nGlobal app spending reached $65 billion in … [+20727 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Tim De Chant",
+    //       title: "Laid off? Climate tech is looking for talent and founders",
+    //       description:
+    //         "Even before the recent waves of layoffs, people were leaving their old jobs for new opportunities in climate tech.",
+    //       url: "https://techcrunch.com/2022/11/05/laid-off-climate-tech-is-looking-for-talent-and-founders/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2022/11/GettyImages-1269413048.jpg?resize=1200,800",
+    //       publishedAt: "2022-11-04T19:48:50Z",
+    //       content:
+    //         "As rumors rumbled that the U.S. Federal Reserve would hike rates once more and when it followed through earlier this week another round of layoffs hit the tech sector. Stripe, Opendoor, Chime, Zillow… [+2902 chars]",
+    //     },
+    //     {
+    //       source: {
+    //         id: "techcrunch",
+    //         name: "TechCrunch",
+    //       },
+    //       author: "Anna Heim",
+    //       title: "Connecting the dots: SaaS and alts",
+    //       description:
+    //         "New data points seem to confirm trends we have heard or seen in two sectors: SaaS and alts.",
+    //       url: "https://techcrunch.com/2022/11/05/connecting-the-dots-saas-and-alts/",
+    //       urlToImage:
+    //         "https://techcrunch.com/wp-content/uploads/2020/06/NSussman_Techcrunch_Exchange-multicolor.jpg?resize=1200,900",
+    //       publishedAt: "2022-11-03T20:58:26Z",
+    //       content:
+    //         "Welcome to The TechCrunch Exchange, a weekly startups-and-markets newsletter. Its inspired by the daily TechCrunch+ column where it gets its name. Want it in your inbox every Saturday? Sign up here.\r… [+1796 chars]",
+    //     },
   ];
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       articles: this.articles,
+      page: 1,
     };
   }
 
-  async componentDidMount(){
-    let apiUrl="https://newsapi.org/v2/top-headlines?country=us&apiKey=381e2704b183499ba83f6a3eb5043cca";
-    let fetchedData=await fetch(apiUrl);
-    let parsedData=await fetchedData.json();
-    this.setState({articles:parsedData.articles})
-
+  async componentDidMount() {
+    let apiUrl = `${this.props.genre}pageSize=${this.props.noofitem}`;
+    let fetchedData = await fetch(apiUrl);
+    let parsedData = await fetchedData.json();
+    this.setState({
+      articles: parsedData.articles,
+      totalResults: parsedData.totalResults,
+    });
+    // let noOfResult=await parsedData.noOfResult
   }
+  nextClick = async () => {
+    console.log(this.state.totalResults);
+
+    // if(this.parsedData.totalResults)
+    console.log("next button clicked");
+    let x = Math.ceil(this.state.totalResults / this.props.noofitem);
+    if (x > this.state.page) {
+      let apiUrl = `${this.props.genre}pageSize=${
+        this.state.page + 1
+      }&pageSize=10`;
+      let fetchedData = await fetch(apiUrl);
+      let parsedData = await fetchedData.json();
+
+      this.setState({
+        articles: parsedData.articles,
+      });
+    } else if (x === this.state.page) {
+      let apiUrl = `${this.props.genre}pageSize=${
+        this.state.page + 1
+      }`;
+      let fetchedData = await fetch(apiUrl);
+      let parsedData = await fetchedData.json();
+
+      this.setState({
+        articles: parsedData.articles,
+      });
+    } else {
+    }
+    this.setState({
+      page: this.state.page + 1,
+    });
+    console.log(this.state.page);
+  };
+
+  prevClick = async () => {
+    let apiUrl = `${this.props.genre}pageSize=${
+      this.state.page - 1
+    }&pageSize=10`;
+    let fetchedData = await fetch(apiUrl);
+    let parsedData = await fetchedData.json();
+
+    this.setState({
+      articles: parsedData.articles,
+      page: this.state.page - 1,
+    });
+  };
+
   render() {
     return (
       <div className="container my-3 mx-3">
         <h1>Breaking News</h1>
         <div className="row">
-       
-            {this.state.articles.map((context) => {
-              return (
-                <div className="col-md-3 mb-3">
-                                    <Newsitem
-                  title={context.title.slice(0,15)}
-                  description={context.description.slice(0,75)}
+          {this.state.articles.map((context) => {
+            return (
+              <div className="col-md-3 mb-3">
+                <Newsitem
+                  title={context.title ? context.title : ""}
+                  description={context.description ? context.description : ""}
                   imageUrl={context.urlToImage}
                   newsUrl={context.url}
                   author={context.author}
                   date={context.publishedAt}
                   key={context.url}
                 />
-                </div>
-
-              );
-            })}
-          
+              </div>
+            );
+          })}
+        </div>
+        <div className="d-flex justify-content-between">
+          <button
+            className="btn btn-dark"
+            disabled={this.state.page <= 1}
+            onClick={this.prevClick}
+          >
+            Prev
+          </button>
+          <h3>{`Page ${this.state.page} of ${Math.ceil(
+            this.state.totalResults / this.props.noofitem
+          )}`}</h3>
+          <button
+            className="btn btn-dark"
+            disabled={
+              this.state.page >=
+              Math.ceil(this.state.totalResults / this.props.noofitem)
+            }
+            onClick={this.nextClick}
+          >
+            Next
+          </button>
         </div>
       </div>
     );

@@ -1,9 +1,19 @@
 import React, { Component } from 'react'
-
+import { Link } from 'react-router-dom';
 export class Navb extends Component {
+  constructor(props){
+    super();
+
+  }
+  togglemode=()=>{
+    console.log('toggled')
+
+
+
+  }
   render() {
     return (
-<nav className="navbar navbar-expand-lg bg-light">
+<nav className="navbar navbar-expand-lg bg-primary">
   <div className="container-fluid">
     <a className="navbar-brand" href="/">Thamel News</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +25,7 @@ export class Navb extends Component {
           <a className="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">Link</a>
+          <Link className="nav-link active" to="./specificnews">Sports</Link>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
