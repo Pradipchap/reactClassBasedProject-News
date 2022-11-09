@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Newsitem from "./newsitem";
+import Loading from "./loading";
 export class Newscomponent extends Component {
   articles = [
     //     {
@@ -174,16 +175,19 @@ export class Newscomponent extends Component {
     this.state = {
       articles: this.articles,
       page: 1,
+      loading:false
     };
   }
 
   async componentDidMount() {
     let apiUrl = `${this.props.genre}pageSize=${this.props.noofitem}`;
+    this.setState({loading:true});
     let fetchedData = await fetch(apiUrl);
     let parsedData = await fetchedData.json();
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
+      loading:false,
     });
     // let noOfResult=await parsedData.noOfResult
   }
@@ -194,9 +198,9 @@ export class Newscomponent extends Component {
     console.log("next button clicked");
     let x = Math.ceil(this.state.totalResults / this.props.noofitem);
     if (x > this.state.page) {
-      let apiUrl = `${this.props.genre}pageSize=${
+      let apiUrl = `${this.props.genre}page=${
         this.state.page + 1
-      }&pageSize=10`;
+      }&pageSize=${this.props.noofitem}`;
       let fetchedData = await fetch(apiUrl);
       let parsedData = await fetchedData.json();
 
@@ -204,7 +208,7 @@ export class Newscomponent extends Component {
         articles: parsedData.articles,
       });
     } else if (x === this.state.page) {
-      let apiUrl = `${this.props.genre}pageSize=${
+      let apiUrl = `${this.props.genre}page=${
         this.state.page + 1
       }`;
       let fetchedData = await fetch(apiUrl);
@@ -222,9 +226,9 @@ export class Newscomponent extends Component {
   };
 
   prevClick = async () => {
-    let apiUrl = `${this.props.genre}pageSize=${
+    let apiUrl = `${this.props.genre}page=${
       this.state.page - 1
-    }&pageSize=10`;
+    }&pageSize=${this.props.noofitem}`;
     let fetchedData = await fetch(apiUrl);
     let parsedData = await fetchedData.json();
 
@@ -238,9 +242,11 @@ export class Newscomponent extends Component {
     return (
       <div className="container my-3 mx-3">
         <h1>Breaking News</h1>
+        {this.state.loading&&<Loading/>}
         <div className="row">
           {this.state.articles.map((context) => {
             return (
+              
               <div className="col-md-3 mb-3">
                 <Newsitem
                   title={context.title ? context.title : ""}
