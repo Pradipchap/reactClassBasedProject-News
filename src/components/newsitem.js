@@ -5,18 +5,19 @@ export class Newsitem extends Component {
     let { title, description, imageUrl, newsUrl, author, date } = this.props;
     return (
       <div>
-        <div className="card" style={{ width: " 18rem" }}>
-          <img src={imageUrl} className="card-img-top" alt="..." />
+        <div className="card" >
+          <img src={imageUrl} className="card-img-top" alt="..."  />
           <div className="card-body">
-            <h5 className="card-title">{title.slice(0,15)}</h5>
-            <p className="card-text">{description.slice(0,50)}</p>
+            <h5 className="card-title">{title.slice(0,20)}</h5>
+            <p className="card-text">{description.slice(0,70)}</p>
+            <p className="card-text"><small className="text-muted">By-{!author?'Unknown':author} on {new Date(date).toGMTString()}</small></p>
           </div>
-          <ul className="list-group list-group-flush">
-            <li className="list-group-item">By-{author}</li>
-            <li className="list-group-item">{date}</li>
-          </ul>
-          <div className="card-body">
-            <a href={newsUrl} target="_" className="btn btn-outline-info">
+
+            
+            
+          
+          <div className="btn">
+            <a href={newsUrl} target="_" className="btn btn-sm btn-dark">
               Read News
             </a>
           </div>

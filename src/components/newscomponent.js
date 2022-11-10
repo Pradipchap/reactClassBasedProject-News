@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Newsitem from "./newsitem";
 import Loading from "./loading";
+
 export class Newscomponent extends Component {
   articles = [
     //     {
@@ -175,66 +176,69 @@ export class Newscomponent extends Component {
     this.state = {
       articles: this.articles,
       page: 1,
-      loading:false
+      loading: false,
     };
   }
+  static defaultProps = {
+    noofitem: 12,
+  };
+  updatestate = async () => {
+    this.setState({ loading: true });
+    console.log(this.state.totalResults);
+
+    console.log("next button clicked");
+
+    let apiUrl = `https://newsapi.org/v2/top-headlines?country=in&category=${
+      this.props.genre
+    }&apiKey=381e2704b183499ba83f6a3eb5043cca&page=${
+      this.state.page + 1
+    }&pageSize=${this.props.noofitem}`;
+
+    let fetchedData = await fetch(apiUrl);
+    let parsedData = await fetchedData.json();
+
+    this.setState({
+      articles: parsedData.articles,
+
+      loading: false,
+    });
+  };
 
   async componentDidMount() {
-    let apiUrl = `${this.props.genre}pageSize=${this.props.noofitem}`;
-    this.setState({loading:true});
+    this.setState({ loading: true });
+    let apiUrl = `https://newsapi.org/v2/top-headlines?country=in&category=${this.props.genre}&apiKey=381e2704b183499ba83f6a3eb5043cca&pageSize=${this.props.noofitem}`;
+
     let fetchedData = await fetch(apiUrl);
     let parsedData = await fetchedData.json();
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
-      loading:false,
     });
+    this.setState({ loading: false });
     // let noOfResult=await parsedData.noOfResult
   }
   nextClick = async () => {
-    console.log(this.state.totalResults);
-
-    // if(this.parsedData.totalResults)
-    console.log("next button clicked");
-    let x = Math.ceil(this.state.totalResults / this.props.noofitem);
-    if (x > this.state.page) {
-      let apiUrl = `${this.props.genre}page=${
-        this.state.page + 1
-      }&pageSize=${this.props.noofitem}`;
-      let fetchedData = await fetch(apiUrl);
-      let parsedData = await fetchedData.json();
-
-      this.setState({
-        articles: parsedData.articles,
-      });
-    } else if (x === this.state.page) {
-      let apiUrl = `${this.props.genre}page=${
-        this.state.page + 1
-      }`;
-      let fetchedData = await fetch(apiUrl);
-      let parsedData = await fetchedData.json();
-
-      this.setState({
-        articles: parsedData.articles,
-      });
-    } else {
-    }
+    this.updatestate();
     this.setState({
       page: this.state.page + 1,
     });
-    console.log(this.state.page);
   };
 
   prevClick = async () => {
-    let apiUrl = `${this.props.genre}page=${
+    this.setState({ loading: true });
+    let apiUrl = `https://newsapi.org/v2/top-headlines?country=in&category=${
+      this.props.genre
+    }&apiKey=381e2704b183499ba83f6a3eb5043cca&page=${
       this.state.page - 1
     }&pageSize=${this.props.noofitem}`;
+
     let fetchedData = await fetch(apiUrl);
     let parsedData = await fetchedData.json();
 
     this.setState({
       articles: parsedData.articles,
       page: this.state.page - 1,
+      loading: false,
     });
   };
 
@@ -242,24 +246,27 @@ export class Newscomponent extends Component {
     return (
       <div className="container my-3 mx-3">
         <h1>Breaking News</h1>
-        {this.state.loading&&<Loading/>}
+        {this.state.loading && <Loading />}
         <div className="row">
-          {this.state.articles.map((context) => {
-            return (
-              
-              <div className="col-md-3 mb-3">
-                <Newsitem
-                  title={context.title ? context.title : ""}
-                  description={context.description ? context.description : ""}
-                  imageUrl={context.urlToImage}
-                  newsUrl={context.url}
-                  author={context.author}
-                  date={context.publishedAt}
-                  key={context.url}
-                />
-              </div>
-            );
-          })}
+          {this.state.loading !== true
+            ? this.state.articles.map((context) => {
+                return (
+                  <div className="col-md-3 mb-3">
+                    <Newsitem
+                      title={context.title ? context.title : ""}
+                      description={
+                        context.description ? context.description : ""
+                      }
+                      imageUrl={context.urlToImage}
+                      newsUrl={context.url}
+                      author={context.author}
+                      date={context.publishedAt}
+                      key={context.url}
+                    />
+                  </div>
+                );
+              })
+            : null}
         </div>
         <div className="d-flex justify-content-between">
           <button

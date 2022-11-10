@@ -14,17 +14,46 @@ export default class App extends Component {
             <Route
               exact
               path="/"
-              element={
-                <NewsComponent
-                  noofitem={10}
-                  genre={
-                    "https://newsapi.org/v2/top-headlines?country=us&apiKey=381e2704b183499ba83f6a3eb5043cca&"
-                  }
-                />
-              }
+              element={<NewsComponent noofitem={12} genre={"general"} />}
             />
 
-            <Route exact path="/specificnews" element={<Specificnews />} />
+            <Route
+              exact
+              path="/sports"
+              
+              element={<Specificnews key="sports" type="sports" />}
+            />
+            <Route
+              exact
+              path="/business"
+              
+              element={<Specificnews key="business" type={"business"} />}
+            />
+            <Route
+              exact
+              path="/entertainment"
+              
+              element={<Specificnews key="entertainment" type={"entertainment"} />}
+            />
+            
+                        <Route
+              exact
+              path="/health"
+              
+              element={<Specificnews  key="health" type="health" />}
+            />
+            <Route
+              exact
+              path="/technology"
+              
+              element={<Specificnews key="technology" type="technology" />}
+            />
+            <Route
+              exact
+              path="/science"
+              
+              element={<Specificnews key="science" type="science" />}
+            />
           </Routes>
         </Router>
 
