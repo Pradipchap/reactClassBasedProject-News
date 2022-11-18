@@ -1,0 +1,14 @@
+.navbar{
+    background-color:rgb(5, 93, 120);
+    color: white;
+}
+.container-fluid{
+    color: white;
+}
+.footer
+{
+    background-color: grey;
+    height: 70px;
+    width: 100rem;
+    
+}
