@@ -8,7 +8,7 @@ import Newscomponent from './newscomponent'
   
   
    return (
-    <Newscomponent  noofitem={12} genre={props.type} apiKey={props.apiKey} />
+    <Newscomponent  noofitem={12} genre={props.type} api={props.apiKey} />
    )
  }
  

@@ -2,10 +2,10 @@ import React from "react";
 import Navb from "./components/navbar";
 import NewsComponent from "./components/newscomponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Specificnews from "./components/specificnews";
+
 
  const App =()=>  { 
-   let apiKey=process.env.REACT_APP_NEWS_API
+
   
   
     return (
@@ -18,18 +18,19 @@ import Specificnews from "./components/specificnews";
             <Route
               exact
               path="/"
-              element={<NewsComponent noofitem={12} genre={"general"} apiKey={apiKey} />}
+              element={<NewsComponent noofitem={12} genre={"general"} />}
             />
 
             <Route
               exact
               path="/sports"
               element={
-                <Specificnews
+                <NewsComponent
                  
-                  key="sports"
-                  type="sports"
-                  apikey={apiKey}
+                  key={"sports"}
+                  genre={"sports"}
+
+                  noofitem={12}
                 />
               }
             />
@@ -37,11 +38,12 @@ import Specificnews from "./components/specificnews";
               exact
               path="/business"
               element={
-                <Specificnews
+                <NewsComponent
                   
-                  key="business"
-                  type={"business"}
-                  apikey={apiKey}
+                  key={"business"}
+                  genre={"business"}
+
+                  noofitem={12}
                 />
               }
             />
@@ -49,11 +51,12 @@ import Specificnews from "./components/specificnews";
               exact
               path="/entertainment"
               element={
-                <Specificnews
+                <NewsComponent
 
-                  key="entertainment"
-                  type={"entertainment"}
-                  apikey={apiKey}
+                  key={"entertainment"}
+                  genre={"entertainment"}
+
+                  noofitem={12}
                 />
               }
             />
@@ -62,11 +65,12 @@ import Specificnews from "./components/specificnews";
               exact
               path="/health"
               element={
-                <Specificnews
+                <NewsComponent
 
-                  key="health"
-                  type="health"
-                  apikey={apiKey}
+                  key={"health"}
+                  genre={"health"}
+
+                  noofitem={12}
                 />
               }
             />
@@ -74,11 +78,12 @@ import Specificnews from "./components/specificnews";
               exact
               path="/technology"
               element={
-                <Specificnews
+                <NewsComponent
 
                   key="technology"
-                  type="technology"
-                  apikey={apiKey}
+                  genre="technology"
+
+                  noofitem={12}
                 />
               }
             />
@@ -86,11 +91,12 @@ import Specificnews from "./components/specificnews";
               exact
               path="/science"
               element={
-                <Specificnews
+                <NewsComponent
 
                   key="science"
-                  type="science"
-                  apikey={apiKey}
+                  genre="science"
+
+                  noofitem={12}
                 />
               }
             />
